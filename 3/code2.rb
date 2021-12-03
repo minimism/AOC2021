@@ -12,9 +12,9 @@ def discriminator(lines, cmp, depth=0)
             end
         end
         if (cmp.call(set.count(), unset.count()))
-            return popChildren = discriminator(set,cmp,depth+1)
+            return discriminator(set,cmp,depth+1)
         else
-            return popChildren = discriminator(unset,cmp,depth+1)
+            return discriminator(unset,cmp,depth+1)
         end
     end
 end
